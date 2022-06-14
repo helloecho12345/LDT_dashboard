@@ -5,24 +5,23 @@ const Dashboard = () => {
 
   const gettingData = jsonData.map(data => data)
   console.log(gettingData)
-  const filter = (e) => {
-      e.preventDefault()
-      document.getElementById("container").append("Hello")
-  };
+  const filter = () => {
+    console.log('Hi')
+  }
   
   
   return (
     <div>
       <div>
-        <div id="container"></div>
         <input id="searchBar" type="text" placeholder="Enter Event Name" />
         <button id="lookUp" type="submit" onClick={filter}>Search</button>
         {/* <button onClick={filter}>Filter</button> */}
       </div>
-      {/* <li>{gettingData.map(each => 
+      <br></br>
+      <div>{gettingData.map(each => 
           <li>Organiser: {each.organiserID} <br></br>   Race: {each.eventTitle}   <br></br>   Name: {each.firstName + " " + each.lastName}   <br></br>   {each.ticketPrice.value}</li>
           )}
-      </li> */}
+      </div>
       {/* <li>{gettingData.map(each =>
           <li>'{each.firstName + " " + each.lastName}'</li>
           )}
