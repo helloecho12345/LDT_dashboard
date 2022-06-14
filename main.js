@@ -1,8 +1,8 @@
 async function start() {
-  const form = document.getElementById("myForm");
+  // const form = document.getElementById("myForm");
   // await fetch will wait for promise in fetch to resolve before continuing
   // const response = await fetch("https://ldt-tech-test.herokuapp.com/api/startlistentries", {dataType: 'jsonp'})
-  const response = await fetch("/LDT_dashboard/startlistentries.json")
+  const response = await fetch("./startlistentries.json")
   const data = await response.json();
 
   createEventList(data)
@@ -25,3 +25,4 @@ start()
 function createEventList(eventList) {
 
 }
+
