@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const SearchTable = () => {
     const [searchTerm, setsearchTerm] = useState("");
-    const keys = ["organiserId", "eventTitle", "firstName", "lastName"];
+    // const keys = ["organiserId", "eventTitle", "firstName", "lastName"];
   return ( 
     <div className="container">
       <input
@@ -11,7 +11,7 @@ const SearchTable = () => {
       placeholder="Search" 
       className="form-control" 
       style={{ marginTop: 50, marginBottom: 20, width: "40%" }}
-      onChange ={(e)=> {
+      onChange ={(e) => {
         setsearchTerm(e.target.value);
       }}
       />
@@ -26,17 +26,17 @@ const SearchTable = () => {
           </tr>
         </thead>
         <tbody>
-          {startlistentries.filter((value) => {
+          {startlistentries.filter((val) => {
             if (searchTerm === "") {
-              return value;
+              return val;
             } else if (
-              value.organiserId.includes(searchTerm) ||
-              value.eventTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              value.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              value.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              value.ticketPrice.fee.includes(searchTerm)
+              val.organiserId.toString().includes(searchTerm) ||
+              val.eventTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              val.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              val.lastName.toLowerCase().includes(searchTerm.toLowerCase())
             ){
-              return value;
+              return val;
+              
             }
           }).map(entry => (
               <tr key={entry.id}>
